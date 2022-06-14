@@ -54,14 +54,41 @@ int main()
 
 
 
-	char a[1000] = { 0 };
+	/*char a[1000] = { 0 };
 	int i;
 	for ( i = 0; i < 1000; i++)
 	{
 		a[i] = -1 - i;
 	}
 
-	printf("%d\n", strlen(a));
+	printf("%d\n", strlen(a));*/
+
+
+	//int a = 9;
+	//float* pF = (float*) & a;
+	//printf("a value is %d\n", a);//9
+	//printf("*pF value is %f\n", *pF);//  0.000000
+	//*pF = 9.0;
+	//printf("a value is %d\n", a);// 1091567616
+	//printf("*pF value is %f\n", *pF);//9.0
+
+	/*
+		IEEE754 规定了任意一个二进制浮点数v可以表示成如下的形式：
+				（-1）^S		* M *			2^E
+				  符号位  1=<有效数字<2     指数位
+				s = 0 / 1
+				float M = 23bit  E = 8bit
+				double M = 52bit  E = 11bit
+
+
+		对于浮点数从内存中取出时：分为三种情况：
+											1、E不全为0或不全为1   真值 = E-127
+											2、全为0		E = 1-127  M不再前面补回原来的1 而是还原为 0.xxxxxx...  表示-+0 和 无限接近于0的数  因为指数部分非常小
+											3、全为1    如果有效位全为0，表示正负无穷大
+	*/
+
+	float f = 5.5f;//0 1000 0001 0110 0000 0000 0000 0000 000 --> 40 b0 00 00
+
 
 	return 0;
 }
