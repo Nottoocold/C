@@ -61,5 +61,8 @@ int main()
 
 
 	printf("%d\n", sizeof(struct A));//4
+
+
+
 	return 0;
 }
