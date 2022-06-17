@@ -31,6 +31,21 @@ struct A
 	//int _e : 20;
 };
 
+//枚举类型
+enum Color
+{
+	RED = 1,//0 1常量 
+	GREEN,//1  2 一次递增
+	BLUE//2   3
+};
+
+//联合体(共用体)
+union MyUnion
+{
+	char c;
+	int a;
+}u;
+
 int main()
 {
 	//结构体
@@ -60,9 +75,18 @@ int main()
 	//printf("%d\n", offsetof(struct S, a));
 
 
-	printf("%d\n", sizeof(struct A));//4
+	//printf("%d\n", sizeof(struct A));//4
 
+	//enum Color c;
+	//printf("%d\n", RED);//0
+	//printf("%d\n", GREEN);//1
+	//printf("%d\n", BLUE);//2
 
+	u.a = 100;
+	printf("%p\n", &(u.a));
+	printf("%p\n", &(u.c));
+	printf("%p\n", &u);
+	printf("%d\n", sizeof(u));//4
 
 	return 0;
 }
