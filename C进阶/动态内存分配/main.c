@@ -24,6 +24,8 @@ int main()
 	//free(q);
 	//q = NULL;
 	//printf("%p\n", q);
+	printf("%d\n", sizeof(s));
+	printf("%d\n", sizeof(s) + sizeof(int) * 10);
 	s* p = (s*)malloc(sizeof(s) + sizeof(int) * 10);
 	if (p != NULL)
 	{
@@ -35,13 +37,19 @@ int main()
 	}
 
 	//¿©»›
-	s* ps = (s*)realloc(p, sizeof(s) + sizeof(int) * 10);
+	printf("%d\n", sizeof(s));
+	printf("%d\n", sizeof(s) + sizeof(int) * 20);
+	s* ps = (s*)realloc(p, sizeof(s) + sizeof(int) * 20);
 	if (ps != NULL)
 	{
 		p = ps;
+		for (int i = 0; i < 20; i++)
+		{
+			p->arr[i] = i;
+		}
 	}
 	// π”√
-
+	
 	// Õ∑≈
 	free(p);
 	p = NULL;
